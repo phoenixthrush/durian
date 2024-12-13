@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jakleb</title>
+    <style>
+        body {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            color: white;
+            font-family: 'Courier New', Courier, monospace
+        }
+
+        #durian {
+            width: 50%;
+            border-radius: 15px;
+        }
+
+        #fullscreen {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            filter: brightness(30%);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Jakleb is(s)t eine Stinkfrucht</h1>
+    <img src="assets/durian.webp" alt="Durian Fruit" id="durian">
+    <p id="info">Click anywhere to play background video.</p>
+    <video autoplay loop id="fullscreen">
+        <source src="assets/it7rQh4HtO4.webm" type="video/webm">
+    </video>
+    <script>
+        const video = document.getElementById('fullscreen');
+        const text = document.getElementById('info');
+
+        addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+            }
+            text.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
